@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merry Christmas Mami</title>
+  <style>
+    
+    body {
+      margin: 10px;
+      font-family: 'Cambria', sans-serif;
+
+    }
+
+    .cover-page, .message-page {
+      width: 60vh;
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: rgba(255, 0, 0, 0.813);
+      overflow: hidden;
+      position: relative;
+      margin-left: 500px;
+      margin-top: 150px;
+      font-size: 18px;
+    }
+
+    .cover-page {
+      background-image: url(christmas.jpg); 
+      background-position: center;
+      background-size: 100%;
+      object-fit: cover;
+      margin-left: 500px;
+      margin-top: 150px;
+    }
+
+    .message-page {
+      background-image: url(merry.jpg);
+      background-size: 120%;
+      display: none;
+      margin-left: 500px;
+      margin-top: 150px;
+      color: rgb(252, 248, 249);
+    }
+
+    #openButton, #nextButton {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: white;
+      color: rgba(255, 0, 0, 0.904);
+      border: none;
+      cursor: pointer;
+      border-radius: 20px;
+      border-style: block;
+    }
+
+    .openbutton {
+      margin-top: 20px;
+    }
+    
+    .openButton:hover {
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      margin-top: 100px;
+      font-size: 12px;
+      font-family: Arial;
+    }
+
+    .nextButton:hover {
+      background-color: #f2f2f2;
+    }
+
+    .animated-message {
+      animation: fadeIn 1s ease-in-out;
+      text-align: justify;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cover Page -->
+  <div class="cover-page">
+    <h1>Merry Christmas Mami</h1>
+    <button id="openButton" onclick="openCard()">click this Mami</button>
+  </div>
+
+  <!-- Message Pages -->
+  <div class="message-page" id="messagePage1">
+    <p class="animated-message">Umm, Yo matatapos na an december it's been a while since we started chatting everyday and it's time na siguro. I know you already know this maiha na. I've wanted to tell you this for a long time but never had the courage to tell this in person, so I'm writing this message to formally tell you that I like you.
+
+    </p>
+    <button id="nextButton" onclick="nextPage(2)">Next Page</button>
+  </div>
+
+  <div class="message-page" id="messagePage2">
+    <p class="animated-message">Yessu I like you it's been a while since I started admiring you and now I've fallen for you, you've been my inspiration. Like hino ba an dire magkakagusto to a girl like you? -you are a genius, god-fearing, bisan mahuyo pero boutan,have beautiful smiles and lastly of course cute kaayo ka,full package na.
+        Then every time na magkatalk us it makes me feels great, imo gudla message ak ginhihinulat everyday. Your the first and last person naak ginchachat.
+        </p>
+    <button id="nextButton" onclick="nextPage(3)">Next Page</button>
+  </div>
+
+  <div class="message-page" id="messagePage3">
+    <p class="animated-message">I want to show more to you how much I care and love you. You are my dream girl, and I want to always be on your side. Sonshine won't shine without you,you're sonshine's source of light. (Pasensiya han grahams HAHAHAHAHA)</p>
+    <button id="nextButton" onclick="nextPage(4)">Next Page</button>
+  </div>
+
+  <div class="message-page" id="messagePage4">
+    <p class="animated-message">Will there be a chance to put a label between us?</p>
+    <button id="nextButton" onclick="nextPage(5)">Next Page</button>
+  </div>
+
+  <div class="message-page" id="messagePage5">
+    <p class="animated-message"> 
+        Ay nahack HAHAHAHAHAHAHAHAHA
+        Merry Christmas Mami!  -sonshinee
+    </p>
+  </div>
+
+  <script>
+    function openCard() {
+      document.querySelector('.cover-page').style.display = 'none';
+      document.getElementById('messagePage1').style.display = 'flex';
+    }
+
+    function nextPage(pageNumber) {
+      for (let i = 1; i <= 5; i++) {
+        document.getElementById(`messagePage${i}`).style.display = 'none';
+      }
+
+      if (pageNumber <= 5) {
+        document.getElementById(`messagePage${pageNumber}`).style.display = 'flex';
+      }
+    }
+  </script>
+
+</body>
+</html>
